@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body th:fragment="nav">
+	<nav class="navbar-default navbar-static-side" role="navigation">
+	    <div class="sidebar-collapse">
+	        <ul class="nav metismenu" id="side-menu">
+	            <!-- 导航头部-用户头像信息 -->
+	            <li class="nav-header">
+	                <div class="dropdown profile-element">
+	                	<div th:if="${session.user}!=null">
+	                        <span>
+		                     	<img alt="image" class="img-circle" th:src="${session.user.avatar}" width="65px"
+	                                 height="65px"/>
+		                     </span>
+		                     <span class="fadeInRight pull-right" th:text="${session.user.showname}"
+	                               style="font-weight: bold;color: #DFE4ED;font-size:x-small;margin-top: 20px;">
+		                     </span>
+		                 </div>
+		                 <div th:if="${session.user}==null">
+	                        <span>
+		                     	<img alt="image" class="img-circle" src="/img/avatar-default.gif" width="65px"
+	                                 height="65px"/>
+		                     </span>
+		                     <span class="fadeInRight pull-right"
+	                               style="font-weight: bold;color: #DFE4ED;font-size:x-small;margin-top: 20px;">
+		                    	未授权用户
+		                     </span>
+	                    </div>
+	                </div>
+	                <div class="logo-element">CC+</div>
+	            </li>
+
+				<!-- 数据统计 -->
+				<li>
+					<a href="#"><i class="fa fa-fw fa-lg fa-cog"></i><span class="nav-label">数据统计</span>
+						<span class="fa arrow"></span></a>
+					<ul class="nav nav-second-level collapse">
+						<li><a href="#" th:href="@{/calendar/test.html}">
+							<i class="fa fa-fw fa-desktop"></i>
+							<span th:text="日历控件测试">日历控件测试</span></a>
+						</li>
+						<li><a href="#" th:href="@{/graph/test.html}">
+							<i class="fa fa-fw fa-desktop"></i>
+							<span th:text="图表测试">图表测试</span></a>
+						</li>
+					</ul>
+
+				</li>
+
+	        </ul>
+	    </div>
+	</nav>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.ui-messagebox{
+	position: fixed;
+	bottom:30%;
+    left: 48%;
+    z-index:10000;
+	width:auto;
+	height:30px;
+	border-radius: 5px;
+}
+.error{
+	background-color: #ffe4e4;
+	border:1px solid #f6b9b9;
+	color:#b94a48;
+}
+.success{
+	background-color: #def1d7;
+	border:1px solid #bfd3af;
+	color:#468847;
+}
+.ui-messagebox-icon{
+	width:18px;
+	height:18px;
+	margin:6px 5px;
+	float:left;
+}
+.error .ui-messagebox-icon{
+	background: url("images/validator.png") no-repeat 0 -40px;
+}
+.success .ui-messagebox-icon{
+	background: url("images/validator.png") no-repeat 0 2px;
+}
+.ui-messagebox-tips{
+	float:left;
+	width:auto;
+	height:30px;
+	padding-right:10px;
+	line-height: 30px;
+	font-size:14px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+    layout:decorator="common/framework">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div layout:fragment="content">
+	<div class="row border-bottom white-bg dashboard-header">
+	    <div class="col-lg-10">
+	        <ol class="breadcrumb">
+	            <li><a href="#">...</a></li>
+	            <li class="active">...</li>
+	        </ol>
+	    </div>
+	</div>
+
+	<!--搜索表单-->
+	<div class="row">
+		  <div class="col-lg-12">
+			<div class="ibox float-e-margins">
+			  <div class="ibox-content">
+					<form method="post" class="form-horizontal" action="/calendar/echo.html">
+					  <div class="form-group">
+							<div class="col-sm-2">
+							  <select style="width:80px" class="form-control" id="timeType" name="timeType">
+							    <option value="1" >按天</option>
+								<option value="2" >按周</option>
+								<option value="3" >按月</option>
+						      </select>
+							</div>
+						  	<div class="col-sm-2">
+							  	<input placeholder="请选择起始时间" style="width:185px" class="form-control selecttime" data-type="startTime" type="text" id="startDate"/>
+							</div>
+							<div class="col-sm-2">
+							  	<input placeholder="请选择截止时间" style="width:185px" class="form-control  selecttime"  data-type="endTime" type="text" id="endDate"/>
+							</div>
+							<input style="display: none;" type="text" name="startTime" id="startTime"/>
+							<input style="display: none;" type="text" name="endTime" id="endTime"/>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-4 col-sm-offset-2">
+					      <button class="btn btn-primary" type="submit">提交</button>
+					    </div>
+					  </div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			// 清空原选择时间
+			$("#timeType").change(function(){  
+				 $("#startDate").val("");
+				 $("#endDate").val("");
+            });
+			
+			// 多维度赋值时间
+			function startPickedFunc(){
+				var timeType = $('#timeType').val();
+				if(timeType == "1"){
+					$dp.$('startTime').value = $dp.cal.getP('y') + $dp.cal.getP('M') + $dp.cal.getP('d');
+				} else if(timeType == "2"){
+					$dp.$('startTime').value = $dp.cal.getP('y') + $dp.cal.getP('W','WW');
+				} else if(timeType == "3"){
+					$dp.$('startTime').value = $dp.cal.getP('y') + $dp.cal.getP('M');
+				}
+			}
+			function endPickedFunc(){
+				var timeType = $('#timeType').val();
+				if(timeType == "1"){
+					$dp.$('endTime').value = $dp.cal.getP('y') + $dp.cal.getP('M') + $dp.cal.getP('d');
+				} else if(timeType == "2"){
+					$dp.$('endTime').value = $dp.cal.getP('y') + $dp.cal.getP('W','WW');
+				} else if(timeType == "3"){
+					$dp.$('endTime').value = $dp.cal.getP('y') + $dp.cal.getP('M');
+				}
+			}
+			
+			// 起始时间
+			var startTimeFc = function(timeType, dateFmt){
+				var config;
+				if(timeType == "1"){
+					config={minDate:'#F{$dp.$D(\'endDate\',{d:-6})}',maxDate:'#F{$dp.$D(\'endDate\',{d:-6})||$dp.$DV(\'%y-%M-%d\',{d:-6})}',isShowWeek:false,onpicked:startPickedFunc}
+				} else if(timeType == "2"){
+					config={minDate:'#F{$dp.$D(\'endDate\',{d:-42})}',maxDate:'#F{$dp.$D(\'endDate\',{d:-42})||$dp.$DV(\'%y-%M-%d\',{d:-42})}',isShowWeek:true,onpicked:startPickedFunc}
+				} else if(timeType == "3"){
+					config={minDate:'#F{$dp.$D(\'endDate\',{d:-6})}',maxDate:'#F{$dp.$D(\'endDate\',{M:-6})||$dp.$DV(\'%y-%M\',{M:-6})}',dateFmt:'yyyy-MM',onpicked:startPickedFunc}
+				}
+				
+				WdatePicker(config);
+			}
+			
+			// 截止时间
+			var endTimeFc = function(timeType, dateFmt){
+				var config;
+				if(timeType == "1"){
+					config = {minDate:'#F{$dp.$D(\'startDate\',{d:6})}',maxDate:'#F{$dp.$D(\'startDate\',{d:6})||\'%y-%M-%d\'}',isShowWeek:false,onpicked:endPickedFunc}
+				} else if(timeType == "2"){
+					config = {minDate:'#F{$dp.$D(\'startDate\',{d:42})}',maxDate:'#F{$dp.$D(\'startDate\',{d:42})||\'%y-%M-%d\'}',isShowWeek:true,onpicked:endPickedFunc}
+				} else if(timeType == "3"){
+					config = {minDate:'#F{$dp.$D(\'startDate\',{M:6})}',maxDate:'#F{$dp.$D(\'startDate\',{M:6})||\'%y-%M\'}',dateFmt:'yyyy-MM',onpicked:endPickedFunc}
+				}
+				
+				WdatePicker(config);
+			}
+			
+			// 将事件绑定到上层
+	        $(".col-lg-12").on("mousedown",".selecttime",function(){
+	        	var $this = $(this);
+	        	var type = $this.attr("data-type");
+	        	var timeType = $('#timeType').val();
+	        	
+	        	if(type == "startTime"){
+	        		startTimeFc(timeType);
+	            }else{
+	            	endTimeFc(timeType);
+	            }
+	        	
+	        	return false;
+	        })
+	       
+	    });  
+
+	</script>
+</div>
+
+</body>
+</html>
