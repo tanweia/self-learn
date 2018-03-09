@@ -56,7 +56,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
-		<dubbo-version>2.8.4</dubbo-version>
+		<dubbo-version>2.5.5</dubbo-version>
 	</properties>
 
 	<dependencies>
@@ -158,6 +158,12 @@
 			</exclusions>	
 		</dependency>
 		
+		<!-- http依赖 -->
+		<dependency>
+			 <groupId>org.apache.httpcomponents</groupId>  
+			   <artifactId>httpmime</artifactId>  
+		</dependency>
+		
 		<!-- 单测 -->
 		<dependency>
 			<groupId>org.jmockit</groupId>
@@ -166,6 +172,7 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<!-- lombok -->
 		<dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -185,6 +192,20 @@
             </exclusions>
         </dependency>
         
+        <!-- 汉字转拼音  -->
+		<dependency>
+			<groupId>com.belerweb</groupId>
+			<artifactId>pinyin4j</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+		
+		<!-- 异步http -->
+		<dependency>
+			<groupId>com.squareup.okhttp3</groupId>
+			<artifactId>okhttp</artifactId>
+			<version>3.4.1</version>
+		</dependency>
+        
         <!--其他依赖 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
@@ -196,10 +217,23 @@
 		    <artifactId>commons-lang</artifactId>
 		    <version>2.6</version>
 		</dependency>
-		
 		<dependency>  
 	       <groupId>net.sourceforge.nekohtml</groupId>  
 	       <artifactId>nekohtml</artifactId>  
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+		    <groupId>commons-codec</groupId>
+		    <artifactId>commons-codec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
 		</dependency>
 	</dependencies>
 
@@ -219,9 +253,9 @@
 							<include>**/mock/*Tests.java</include>
 							<include>**/mock/*Test.java</include>
 						</includes>
-						<excludes>
+						<!-- <excludes>
 							<exclude>**/Abstract*.java</exclude>
-						</excludes>
+						</excludes> -->
 					</configuration>
 			</plugin>
 		</plugins>

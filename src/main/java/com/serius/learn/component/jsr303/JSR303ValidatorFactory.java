@@ -6,6 +6,7 @@ import javax.validation.ValidatorFactory;
 
 
 /**
+ * Created by cdtanwei1 on Mar 9, 2018
  * 获取Validator，保证单例
  */
 public enum JSR303ValidatorFactory {

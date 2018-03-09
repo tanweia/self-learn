@@ -9,7 +9,7 @@ import com.serius.learn.enums.LearnErrorCode;
  * create by tanweia on Jun 8, 2017
  * 业务异常
  */
-public class LearnException extends RuntimeException {
+public class BusinessException extends RuntimeException {
 
     /**
 	 * Fields serialVersionUID: TODO
@@ -18,48 +18,48 @@ public class LearnException extends RuntimeException {
 	
 	private String code;
 
-    public LearnException() {
+    public BusinessException() {
     }
 
-    public LearnException(String msg) {
+    public BusinessException(String msg) {
         super(msg);
     }
 
-    public LearnException(String code, String msg) {
+    public BusinessException(String code, String msg) {
         super(msg);
         this.code = code;
     }
     
-    public LearnException(LearnErrorCode errCode) {
+    public BusinessException(LearnErrorCode errCode) {
     	super(errCode.getMessage());
     	this.code = errCode.getCode();
     }
     
-    public LearnException(StringBuilder msg) {
+    public BusinessException(StringBuilder msg) {
         super(msg == null?null:msg.toString());
     }
 
-    public LearnException(StringBuffer msg) {
+    public BusinessException(StringBuffer msg) {
         super(msg == null?null:msg.toString());
     }
 
-    public LearnException(Throwable cause) {
+    public BusinessException(Throwable cause) {
         super(cause);
     }
 
-    public LearnException(String msg, Throwable cause) {
+    public BusinessException(String msg, Throwable cause) {
         super(msg, cause);
     }
 
-    public LearnException(StringBuilder msg, Throwable cause) {
+    public BusinessException(StringBuilder msg, Throwable cause) {
         super(msg == null?null:msg.toString(), cause);
     }
 
-    public LearnException(StringBuffer msg, Throwable cause) {
+    public BusinessException(StringBuffer msg, Throwable cause) {
         super(msg == null?null:msg.toString(), cause);
     }
 
-    protected LearnException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    protected BusinessException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 

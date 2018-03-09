@@ -11,7 +11,7 @@ import com.serius.learn.api.domain.base.Result;
 import com.serius.learn.api.domain.request.DemoReqDTO;
 import com.serius.learn.api.domain.result.DemoResDTO;
 import com.serius.learn.biz.DemoBiz;
-import com.serius.learn.exception.LearnException;
+import com.serius.learn.exception.BusinessException;
 
 @Service
 public class DemoServiceImpl implements DemoService{
@@ -29,7 +29,7 @@ public class DemoServiceImpl implements DemoService{
 			demoBiz.demo();
 			DemoResDTO dto = new DemoResDTO();
 			result.success(dto);
-		} catch (LearnException e) {
+		} catch (BusinessException e) {
 			logger.error("接口调用异常：{}", e.getMessage());
 			result.fail(e.getCode(), e.getMessage()); 
 		}
