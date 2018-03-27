@@ -1,5 +1,6 @@
 package com.serius.learn.other;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 import org.junit.Test;
@@ -29,6 +30,37 @@ public class MathTests {
 		
 	}
 	
+	@Test
+	public void divideTest() {
+		double t = new BigDecimal(200.0)
+        .divide(new BigDecimal(12), 8, BigDecimal.ROUND_HALF_UP)
+        .doubleValue();
+		System.out.println(t);
+	}
+	
+	@Test
+	public void divideDoubleTest1() {
+		double t1 = 18600.0000000000000000;
+		double t2 = 178600.0000000000000000;
+		System.out.println(t1/t2);
+	}
+	
+	@Test
+	public void divideDoubleTest2() {
+		double t1 = 200.0;
+		double t2 = 12.00;
+		System.out.println(t1/t2);
+		System.out.println(12*16.666666666666668);
+	}
+	
+	@Test
+	public void eqTest() {
+		double t1 = 0.0;
+		if(t1 == 0.0){
+			System.out.println(true);
+		}
+	}
+	
 	/**
 	 * 计算等比数列
 	 * @param a1
@@ -40,4 +72,7 @@ public class MathTests {
 		double sum = q*(1-Math.pow(q, n))/(1-q);
 		return sum;
 	}
+	
+	
+	
 }

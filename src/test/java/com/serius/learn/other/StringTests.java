@@ -39,4 +39,11 @@ public class StringTests {
 		String test = "http://xxx.xxx.xx";
 		System.out.println(test.split("&to=")[1]);
 	}
+	
+	@Test
+	public void replaceTest() {
+		String test = "123434hhaa113";
+		System.out.println(test.replaceAll("h", "o"));
+		System.out.println(test);
+	}
 }
