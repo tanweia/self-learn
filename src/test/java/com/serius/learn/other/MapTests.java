@@ -26,4 +26,20 @@ public class MapTests {
 		System.out.println(map.values());
 		System.out.println(linkedMap.values());
 	}
+	
+	@Test
+	public void putAllTest() {
+		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> hMap = new HashMap<String, String>();
+		map.put("1", "a");
+		map.put("2", "b");
+		hMap.put("3", "c");
+		hMap.put("4", "d");
+		Map<String, String> res = new HashMap<String, String>();
+		res.putAll(map);
+		res.putAll(hMap);
+		System.out.println(res.keySet());
+		System.out.println(res.values());
+		System.out.println(res.get("3"));
+	}
 }
