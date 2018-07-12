@@ -46,4 +46,12 @@ public class StringTests {
 		System.out.println(test.replaceAll("h", "o"));
 		System.out.println(test);
 	}
+	
+	@Test
+	public void replaceTest1() {
+		String test = "dfdsffd\t";
+		System.out.println(test.replaceAll("\\\\t", "").trim() + "" + "---");
+		System.out.println("----");
+//		System.out.println(test);
+	}
 }
