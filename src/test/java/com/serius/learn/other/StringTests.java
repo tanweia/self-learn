@@ -36,8 +36,15 @@ public class StringTests {
 	
 	@Test
 	public void indexTest() {
-		String test = "http://xxx.xxx.xx";
+		String test = "http://xxx.xxx.xx&to=1";
 		System.out.println(test.split("&to=")[1]);
+	}
+	
+	@Test
+	public void indexTest2() {
+		String test = "http://img30.360buyimg.com/test/jfs/t7/274/580651897/22698/322fba56/5adec95dNa73a02f3.jpg";
+		int index = test.indexOf("/jfs/");
+		System.out.println(test.substring(index));
 	}
 	
 	@Test
@@ -53,5 +60,35 @@ public class StringTests {
 		System.out.println(test.replaceAll("\\\\t", "").trim() + "" + "---");
 		System.out.println("----");
 //		System.out.println(test);
+	public void replaceTableTest() {
+		String test = "  测	试 测\ts\r\n	  测 ";
+		System.out.println(test);
+		System.out.println(test.replaceAll("\t", "").replaceAll("\r", "").replaceAll("\n", "").trim());
+	}
+	
+	@Test
+	public void formatTest() {
+		String test = "测试%s测试";
+		System.out.println(String.format(test, "000"));
+	}
+	
+	@Test
+	public void containsTest() {
+		String test = "http://img30.360buyimg.com/tg/tetst=http://www.baidu.com";
+		System.out.println(test.split("http://img30.360buyimg.com/tg/")[1]);
+	}
+	
+	@Test
+	public void spiltTest() {
+		String test = "http://www.baidu.com";
+		System.out.println(test.split("to=").length);
+		System.out.println(test);
+	}
+	
+	@Test
+	public void spiltTest2() {
+		String test = "是|否";
+		System.out.println(test.split("\\|").length);
+		System.out.println(test.split("\\|")[2]);
 	}
 }

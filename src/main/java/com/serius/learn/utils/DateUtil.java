@@ -302,4 +302,20 @@ public class DateUtil {
                     MessageFormat.format("入参datetime：{1}解析异常，请检查格式必须为：{2}",datetime,format));
         }
     }
+    
+    /**
+     * 获取零点时间
+     * @param dateStr
+     * @return
+     */
+    public static String getZeroDateTime(String dateStr) {
+    	Date date = parseDate(dateStr, SHOW_DATE_FORMAT);
+    	Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        Date zero = calendar.getTime();
+        return format(zero, SHOW_DATE_FORMAT);
+    }
 }

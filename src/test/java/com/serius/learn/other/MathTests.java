@@ -61,6 +61,11 @@ public class MathTests {
 		}
 	}
 	
+	@Test
+	public void floorTest() {
+		System.out.println((int)Math.floor(10.52));
+	}
+	
 	/**
 	 * 计算等比数列
 	 * @param a1
@@ -72,7 +77,6 @@ public class MathTests {
 		double sum = q*(1-Math.pow(q, n))/(1-q);
 		return sum;
 	}
-	
 	
 	
 }
