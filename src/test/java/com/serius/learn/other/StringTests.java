@@ -86,4 +86,16 @@ public class StringTests {
 		System.out.println(test.split("\\|").length);
 		System.out.println(test.split("\\|")[2]);
 	}
+	
+	@Test
+	public void subStrTest() {
+		long materialId = 0;
+		String materialIdStr = String.valueOf(materialId);
+		int len = materialIdStr.length();
+		if (len >= 5) {
+			materialIdStr = materialIdStr.substring(0, len - 2);
+			materialId = Long.parseLong(materialIdStr);
+		}
+		System.out.println(materialId);
+	}
 }
