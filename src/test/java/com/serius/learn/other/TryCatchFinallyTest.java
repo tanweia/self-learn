@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 
 import org.junit.Test;
 
+import com.serius.learn.exception.BusinessException;
+
 public class TryCatchFinallyTest {
 	
 	@Test
@@ -25,4 +27,26 @@ public class TryCatchFinallyTest {
 		System.out.println("4444444444");
 		return;
 	}
-}	
+	
+	@Test
+	public void nestTest2() {
+		try {
+			finallyTest();
+			System.out.println("444");
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	
+	private void finallyTest(){	
+		try {
+			System.out.println("111");
+			throw new RuntimeException();
+		} catch (Exception e) {
+			System.out.println("222");
+			throw new BusinessException("my test");
+		} finally{
+			System.out.println("333");
+		}
+	}
+}

@@ -55,6 +55,11 @@ public class StringTests {
 	}
 	
 	@Test
+	public void replaceTest1() {
+		String test = "dfdsffd\t";
+		System.out.println(test.replaceAll("\\\\t", "").trim() + "" + "---");
+		System.out.println("----");
+//		System.out.println(test);
 	public void replaceTableTest() {
 		String test = "  测	试 测\ts\r\n	  测 ";
 		System.out.println(test);
