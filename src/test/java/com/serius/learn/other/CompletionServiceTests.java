@@ -18,14 +18,14 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 
 public class CompletionServiceTests {
-	BlockingQueue<Runnable> workQueue = new LinkedBlockingDeque<Runnable>(19);
+	BlockingQueue<Runnable> workQueue = new LinkedBlockingDeque<Runnable>(10);
 	ExecutorService exec = new ThreadPoolExecutor(1, 1, 10, TimeUnit.SECONDS, workQueue);
-	final BlockingDeque<Future<String>> queue = new LinkedBlockingDeque<Future<String>>(20);
+	final BlockingDeque<Future<String>> queue = new LinkedBlockingDeque<Future<String>>(10);
 	final CompletionService<String> completionService = new ExecutorCompletionService<String>(exec, queue);
 	
 	@Test
 	public void test() throws InterruptedException, ExecutionException {
-		for (int i = 0; i < 20; i++) {
+		for (int i = 0; i < 10; i++) {
 			System.out.println("******");
 			completionService.submit(new Callable<String>() {
 				public String call() throws InterruptedException {
@@ -40,12 +40,8 @@ public class CompletionServiceTests {
 		System.out.println("----------");
 		
 		int i = 0;
-		while (i < 20) {
+		while (i < 10) {
 			Future<String> future = completionService.take();
-			if(future == null){
-//				i --;
-				continue;
-			}
 			String result = future.get();
 			System.out.println(result);
 			i ++;

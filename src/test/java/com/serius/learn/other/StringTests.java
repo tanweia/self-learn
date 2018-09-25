@@ -1,8 +1,12 @@
 package com.serius.learn.other;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 public class StringTests {
@@ -59,6 +63,7 @@ public class StringTests {
 		String test = "dfdsffd\t";
 		System.out.println(test.replaceAll("\\\\t", "").trim() + "" + "---");
 		System.out.println("----");
+	}
 //		System.out.println(test);
 	public void replaceTableTest() {
 		String test = "  测	试 测\ts\r\n	  测 ";
@@ -102,5 +107,169 @@ public class StringTests {
 			materialId = Long.parseLong(materialIdStr);
 		}
 		System.out.println(materialId);
+	}
+	
+	@Test
+	public void spiltTest3() {
+		long start = System.currentTimeMillis();
+		int i = 0;
+		while (i < 100000) {
+			String sourceId = "tmp-1234-3456-123456";
+			sourceId.split("-");
+			i ++;
+		}
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);
+	}
+	
+	@Test
+	public void spiltTest4() {
+		long start = System.currentTimeMillis();
+		int i = 0;
+		while (i < 100000) {
+			String sourceId = "tmp-1234-3456-123456";
+			StringTokenizer token = new StringTokenizer(sourceId, "-");
+			i ++;
+		}
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);
+	}
+	
+	@Test
+	public void spiltTestall() {
+		int i = 0;
+		while (i < 100) {
+			spiltTest6();
+			i ++;
+		}
+	}
+	
+	@Test
+	public void spiltTest5() {
+		long start = System.currentTimeMillis();
+		int i = 0;
+		while (i < 10000) {
+			String test = "12345-20180828_true_*_*";
+			test.split("-");
+			i ++;
+		}
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);
+	}
+	
+	@Test
+	public void spiltTest6() {
+		long start = System.currentTimeMillis();
+		int i = 0;
+		while (i < 10000) {
+			String test = "201-1-12345-20180828_true_*_*";
+			test.split("-");
+			i ++;
+		}
+		long end = System.currentTimeMillis();
+		System.out.println(end - start);
+	}
+	
+	@Test
+	public void dateTest() {
+		int j = 0;
+		while(j < 1000) {
+			long start = System.currentTimeMillis();
+			int i = 0;
+			while(i < 10000) {
+				
+				 LocalDateTime curDateTime = LocalDateTime.now();
+			     DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("YYYYMMdd");
+			     curDateTime.format(dateTimeFormatter);
+			     System.out.println(curDateTime.format(dateTimeFormatter));
+			     
+			     i ++;
+			}
+			long end = System.currentTimeMillis();
+			 System.out.println(end - start);
+			 j++;
+		}
+	}
+	
+	@Test
+	public void str2IntTest() {
+		int j = 0;
+		while(j < 1000) {
+			long start = System.currentTimeMillis();
+			int i = 0;
+			while(i < 10000) {
+				
+				 String t = "20180919";
+				 int date = Integer.parseInt(t);
+//				 System.out.println(date);
+			     //System.out.println(curDateTime.format(dateTimeFormatter));
+			     
+			     i ++;
+			}
+			long end = System.currentTimeMillis();
+			 System.out.println(end - start);
+			 j++;
+		}
+	}
+	
+	@Test
+	public void replaceTest2() {
+		int j = 0;
+		while(j < 1000) {
+			long start = System.currentTimeMillis();
+			int i = 0;
+			while(i < 10000) {
+				
+				 String t = "2018-09-19";
+				 t.replaceAll("-", "");
+//				 System.out.println(t.replaceAll("-", ""));
+//				 System.out.println(date);
+			     //System.out.println(curDateTime.format(dateTimeFormatter));
+			     
+			     i ++;
+			}
+			long end = System.currentTimeMillis();
+			 System.out.println(end - start);
+			 j++;
+		}
+	}
+	
+	@Test
+	public void equalTest() {
+		int j = 0;
+		while(j < 1000) {
+			long start = System.currentTimeMillis();
+			int i = 0;
+			while(i < 10000) {
+				
+				 String t = "2018-09-19";
+				 String t1 = "2018-09-18";
+				 if (!StringUtils.equals(t, t1)) {
+//					System.out.println(false);
+				 }
+//				 t.replaceAll("-", "");
+//				 System.out.println(t.replaceAll("-", ""));
+//				 System.out.println(date);
+			     //System.out.println(curDateTime.format(dateTimeFormatter));
+			     
+			     i ++;
+			}
+			long end = System.currentTimeMillis();
+			 System.out.println(end - start);
+			 j++;
+		}
+	}
+	
+	@Test
+	public void str2intTest() {
+		String dd = "09";
+		System.out.println(Integer.parseInt(dd));
+	}
+	
+	@Test
+	public void spiltTest7() {
+		String t = "123\t456\t789";
+		String[] array = t.split("\t");
+		System.out.println(array[0]);
 	}
 }
