@@ -45,6 +45,19 @@ public class StringTests {
 	}
 	
 	@Test
+	public void intTest() {
+		int skuNum = 10;
+		long value = 12;
+		System.out.println((long)(value % skuNum));
+	}
+	
+	@Test
+	public void subTest() {
+		String test = "2018091910";
+		System.out.println(test.substring(0, 8));
+	}
+	
+	@Test
 	public void indexTest2() {
 		String test = "http://img30.360buyimg.com/test/jfs/t7/274/580651897/22698/322fba56/5adec95dNa73a02f3.jpg";
 		int index = test.indexOf("/jfs/");
@@ -94,7 +107,8 @@ public class StringTests {
 	public void spiltTest2() {
 		String test = "是|否";
 		System.out.println(test.split("\\|").length);
-		System.out.println(test.split("\\|")[2]);
+//		System.out.println(test.split("\\|")[2]);
+		System.out.println(test);
 	}
 	
 	@Test

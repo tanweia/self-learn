@@ -38,6 +38,15 @@ public class TryCatchFinallyTest {
 		}
 	}
 	
+	@Test
+	public void exceptionTest3() {
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 	private void finallyTest(){	
 		try {
 			System.out.println("111");
@@ -49,4 +58,5 @@ public class TryCatchFinallyTest {
 			System.out.println("333");
 		}
 	}
+	
 }
