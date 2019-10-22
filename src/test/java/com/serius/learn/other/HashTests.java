@@ -9,7 +9,7 @@ public class HashTests {
 		int j = 0;
 		while(j < 100) {
 			long start = System.currentTimeMillis();
-			String key = "9d1624c8d1f55b840f3d377fcb0750b5";
+			String key = "";
 			int i = 0;
 			while (i < 100000) {
 				int t = Math.abs(key.hashCode()) % 2;

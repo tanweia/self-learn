@@ -1,7 +1,7 @@
 package com.serius.learn.enums;
 
 /**
- * create by tanweia on Jun 8, 2017
+ * create by serius on Jun 8, 2017
  * 错误码
  */
 public enum LearnErrorCode {

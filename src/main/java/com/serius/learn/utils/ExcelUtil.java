@@ -18,7 +18,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 /**
  * Excel工具
  * 
- * Created by cdtanwei1 on Jul 9, 2018
+ * Created by serius on Jul 9, 2018
  */
 public class ExcelUtil {
 	

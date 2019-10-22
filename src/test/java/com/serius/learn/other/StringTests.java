@@ -8,6 +8,9 @@ import java.util.StringTokenizer;
 
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
+import org.springframework.boot.test.context.TestComponent;
+
+import com.alibaba.fastjson.JSONArray;
 
 public class StringTests {
 	
@@ -59,8 +62,8 @@ public class StringTests {
 	
 	@Test
 	public void indexTest2() {
-		String test = "http://img30.360buyimg.com/test/jfs/t7/274/580651897/22698/322fba56/5adec95dNa73a02f3.jpg";
-		int index = test.indexOf("/jfs/");
+		String test = "";
+		int index = test.indexOf("//");
 		System.out.println(test.substring(index));
 	}
 	
@@ -92,7 +95,7 @@ public class StringTests {
 	
 	@Test
 	public void containsTest() {
-		String test = "http://img30.360buyimg.com/tg/tetst=http://www.baidu.com";
+		String test = "";
 		System.out.println(test.split("http://img30.360buyimg.com/tg/")[1]);
 	}
 	
@@ -141,7 +144,7 @@ public class StringTests {
 		long start = System.currentTimeMillis();
 		int i = 0;
 		while (i < 100000) {
-			String sourceId = "tmp-1234-3456-123456";
+			String sourceId = "";
 			StringTokenizer token = new StringTokenizer(sourceId, "-");
 			i ++;
 		}
@@ -163,7 +166,7 @@ public class StringTests {
 		long start = System.currentTimeMillis();
 		int i = 0;
 		while (i < 10000) {
-			String test = "12345-20180828_true_*_*";
+			String test = "";
 			test.split("-");
 			i ++;
 		}
@@ -176,7 +179,7 @@ public class StringTests {
 		long start = System.currentTimeMillis();
 		int i = 0;
 		while (i < 10000) {
-			String test = "201-1-12345-20180828_true_*_*";
+			String test = "";
 			test.split("-");
 			i ++;
 		}
@@ -277,7 +280,10 @@ public class StringTests {
 	@Test
 	public void str2intTest() {
 		String dd = "09";
-		System.out.println(Integer.parseInt(dd));
+		if (!dd.contains("-")) {
+			dd = dd + "-0";
+		}
+		System.out.println(dd);
 	}
 	
 	@Test
@@ -285,5 +291,29 @@ public class StringTests {
 		String t = "123\t456\t789";
 		String[] array = t.split("\t");
 		System.out.println(array[0]);
+	}
+	
+	@Test
+	public void instanceTest() {
+		System.out.println(null instanceof String);
+	}
+	
+	@Test
+	public void contains() {
+		String tString = "tt-dd";
+		tString.split("-");
+		System.out.println(tString);
+		System.out.println("".contains(""));
+	}
+	
+	@Test
+	public void strTest() {
+		System.out.println("".split("-").length);
+	}
+	
+	@Test
+	public void jsonTest() {
+		String jsonString = "";
+		System.out.println(JSONArray.parseArray(jsonString).getJSONObject(0).getJSONArray("io").isEmpty());
 	}
 }

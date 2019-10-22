@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * create by tanweia on Aug 7, 2017
+ * create by serius on Aug 7, 2017
  */
 public class FileUtil {
 	

@@ -10,7 +10,7 @@ import com.mongodb.WriteConcern;
 
 
 /**
- * create by tanweia on Jun 8, 2017
+ * create by serius on Jun 8, 2017
  * 主要负责性能调优的一些配置
  */
 @Configuration

@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.Assert;
 
 /**
- * create by tanweia on Jun 8, 2017
+ * create by serius on Jun 8, 2017
  */
 public class DateUtil {
 	

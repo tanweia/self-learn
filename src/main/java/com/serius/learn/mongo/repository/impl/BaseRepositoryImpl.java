@@ -13,7 +13,7 @@ import com.mongodb.WriteResult;
 import com.serius.learn.mongo.repository.BaseRepository;
 
 /**
- * create by tanweia on Jun 25, 2017
+ * create by serius on Jun 25, 2017
  * db操作全局实现
  */
 public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleMongoRepository<T, ID> implements BaseRepository<T, ID> {

@@ -11,8 +11,8 @@ public class FileTests {
 	
 	@Test
 	public void fileSizeTest() throws IOException {
-		final FileInputStream fis = new FileInputStream("E:/lombok.jar");
-		System.out.println(fis.getChannel().size()/1024);
+		FileInputStream fis = new FileInputStream("test.java");
+		System.out.println(fis.read());
 		fis.close();
 	}
 	

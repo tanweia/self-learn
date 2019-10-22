@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 
 
 /**
- * create by tanweia on Jun 8, 2017
+ * create by serius on Jun 8, 2017
  */
 public class Base64Util {
 	private static Logger log = Logger.getLogger(Base64Util.class);

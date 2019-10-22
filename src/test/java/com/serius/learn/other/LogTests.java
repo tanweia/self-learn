@@ -14,6 +14,7 @@ public class LogTests {
 	@Test
 	public void nullTest() {
 		System.out.println("test->" + null);
+		System.out.println(null instanceof Long);
 	}
 	
 	@Test
@@ -29,6 +30,23 @@ public class LogTests {
 		        System.out.println(t);
 			}
 		}
+		
+	}
+	
+	@Test
+	public void intTest() {
+		String t = "-1";
+		System.out.println(Integer.parseInt(t));
+	}
+	
+	@Test
+	public void floatTest() {
+		double tt = 2.12121;
+		Float tt1 = 200f;
+		System.out.println(tt1/1000);
+		System.out.println(tt + tt1/1000);
+		System.out.println((tt + tt1/1000)>2L);
+		System.out.println((tt + tt1/1000)>3L);
 		
 	}
 }

@@ -7,7 +7,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by cdtanwei1 on Mar 9, 2018
+ * Created by serius on Mar 9, 2018
  */
 public class EncryptUtil {
 	public static final String UTF8 = "UTF-8";

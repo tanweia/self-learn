@@ -1,9 +1,11 @@
 package com.serius.learn.other;
 
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 
 import org.assertj.core.util.DateUtil;
@@ -29,5 +31,16 @@ public class DateTests {
 		System.out.println(zone);
 		LocalDateTime tmp = LocalDateTime.ofInstant(instant, zone);
 //		return localDateTime.compareTo(tmp);
+	}
+	
+	@Test
+	public void mTest() {
+		LocalDateTime curDateTime = LocalDateTime.now();
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("mm");
+        System.out.println(curDateTime.format(dateTimeFormatter));
+        
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat formater = new SimpleDateFormat("mm");
+        System.out.println(formater.format(calendar.getTime()));
 	}
 }

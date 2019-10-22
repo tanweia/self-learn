@@ -20,13 +20,13 @@ public class ExcelTests {
 	
 	@Test
 	public void mergeTest() throws InvalidFormatException, IOException {
-        InputStream input1 = new FileInputStream("E:/TG/test/report/temp.xlsx");
-//		InputStream input1 = getClass().getResourceAsStream("E:/TG/test/report/main.xlsx");        
+        InputStream input1 = new FileInputStream("");
+//		InputStream input1 = getClass().getResourceAsStream("");        
 //		Workbook workbook1 = WorkbookFactory.create(input1);
 		/*XSSFWorkbook workbook1 = new XSSFWorkbook(input1);
-		InputStream input2 = new FileInputStream("E:\\TG\\test\\report\\resource.xlsx");        
+		InputStream input2 = new FileInputStream("");        
 		XSSFWorkbook workbook2 = new XSSFWorkbook(input2);
-		InputStream input3 = new FileInputStream("E:\\TG\\test\\report\\base.xlsx");        
+		InputStream input3 = new FileInputStream("");        
 		XSSFWorkbook workbook3 = new XSSFWorkbook(input3);
 		XSSFWorkbook[] array = new XSSFWorkbook[]{workbook1, workbook2, workbook3};
 		System.out.print("开始合并");
@@ -36,7 +36,7 @@ public class ExcelTests {
         int lastRowNum = sheet.getLastRowNum();
         System.out.println(lastRowNum);
        /* sheet.shiftRows(3, lastRowNum, -3);
-        FileOutputStream os = new FileOutputStream("E:/TG/test/report/test_1.xlsx");  
+        FileOutputStream os = new FileOutputStream("");  
         workbook.write(os);  
         os.close();*/
 	}

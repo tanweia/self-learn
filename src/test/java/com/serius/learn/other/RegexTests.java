@@ -11,7 +11,7 @@ public class RegexTests {
 	
 	@Test
 	public void urlTest() {
-		String url = "http://clickc.admaster.com.cn/c/a108738,b2588680,c2160,i0,m101,8a2,8b2,0a$(h_MMAOS),0c$(h_MMAIMEI),0d$(h_MMAANDROIDID),n$(h_MMAMAC),o$(h_MMAOPENUDID),z$(h_MMAIDFA),f$(h_MMAIP),t$(m_TIMESTAMP),x$(h_MMAAKEY),y$(h_MMAANAME),h";
+		String url = "";
 		System.out.println(RegexUtil.IsUrl(url));
 	}
 	
@@ -55,7 +55,7 @@ public class RegexTests {
 	
 	@Test
 	public void regexTest5() {
-		String url = "http://clk.gentags.net/nck/iv-38996/st-1645/cr-2/oi-1281930/or-6568/adv-403/pcon-0/t_ip=__IP__&imei=__IMEI__&mac=__MAC__&mac1=__MAC1__&androidid=__AndroidID__&androidid1=__AndroidID1__&aaid=__AAID__&udid=__UDID__&idfa=__IDFA__&openudid=__OpenUDID__&duid=__DUID__&os=__OS__&ts=__TS__/";
+		String url = "";
 		System.out.println(RegexUtil.IsUrl(url));
 	}
 	

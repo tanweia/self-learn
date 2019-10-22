@@ -16,10 +16,10 @@ public class UploadFile {
 	
 	@Test
 	public void uploadMaterialFileTest() throws Exception {
-		/*String api_path = "/adv/creative/uploadMaterialFile";
-		File originFile = new File("E:/工作资料/TG/0228/test/素材.zip");
-		MockMultipartFile file = new MockMultipartFile("materialFile", "素材.zip" , null, FileUtil.file2byteByNio(originFile));  
-		RequestBuilder builder = fileUpload(api_path).file(file).param("resourceId", "112933");
+		/*String api_path = "";
+		File originFile = new File("");
+		MockMultipartFile file = new MockMultipartFile("materialFile", "" , null, FileUtil.file2byteByNio(originFile));  
+		RequestBuilder builder = fileUpload(api_path).file(file).param("", "112933");
 		mockMvc.perform(builder).andDo(print()).andExpect(status().isOk());*/
 	}
 }

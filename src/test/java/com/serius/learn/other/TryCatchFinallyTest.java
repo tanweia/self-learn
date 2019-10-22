@@ -13,7 +13,7 @@ public class TryCatchFinallyTest {
 		try {
 			FileInputStream fis = null;
 			try {
-				 fis = new FileInputStream("E:/工作资料/谭伟工作计划.xlsx");
+				 fis = new FileInputStream("");
 			} finally {
 				fis.close();
 				System.out.println("11111");

@@ -29,7 +29,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 /**
- * create by tanweia on Jun 8, 2017
+ * create by serius on Jun 8, 2017
  */
 @Configuration
 public class DubboConfig {

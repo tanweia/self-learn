@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 
 
 /**
- * Created by cdtanwei1 on Mar 9, 2018
+ * Created by serius on Mar 9, 2018
  */
 public final class ChineseToEnUtil {  
 	 /** 

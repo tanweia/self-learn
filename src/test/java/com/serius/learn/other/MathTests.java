@@ -66,6 +66,12 @@ public class MathTests {
 		System.out.println((int)Math.floor(10.52));
 	}
 	
+	@Test
+	public void bigDecimalTest() {
+		System.out.println(BigDecimal.valueOf(0.895)
+		.setScale(2, BigDecimal.ROUND_HALF_UP));
+	}
+	
 	/**
 	 * 计算等比数列
 	 * @param a1

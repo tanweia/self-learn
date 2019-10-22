@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import com.serius.learn.enums.LearnErrorCode;
 
 /**
- * create by tanweia on Jun 8, 2017
+ * create by serius on Jun 8, 2017
  * 业务异常
  */
 public class BusinessException extends RuntimeException {
