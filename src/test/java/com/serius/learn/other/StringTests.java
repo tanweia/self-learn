@@ -43,8 +43,8 @@ public class StringTests {
 	
 	@Test
 	public void indexTest() {
-		String test = "http://xxx.xxx.xx&to=1";
-		System.out.println(test.split("&to=")[1]);
+		String test = "";
+		System.out.println(test.split("")[1]);
 	}
 	
 	@Test
@@ -131,7 +131,7 @@ public class StringTests {
 		long start = System.currentTimeMillis();
 		int i = 0;
 		while (i < 100000) {
-			String sourceId = "tmp-1234-3456-123456";
+			String sourceId = "";
 			sourceId.split("-");
 			i ++;
 		}
@@ -288,7 +288,7 @@ public class StringTests {
 	
 	@Test
 	public void spiltTest7() {
-		String t = "123\t456\t789";
+		String t = "";
 		String[] array = t.split("\t");
 		System.out.println(array[0]);
 	}

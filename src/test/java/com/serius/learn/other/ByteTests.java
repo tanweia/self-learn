@@ -16,7 +16,7 @@ public class ByteTests {
 	
 	@Test
 	public void _OStr2Str() {
-		/*String _OStr = "\347\262\276\345\207\206\346\240\207\351\242\2302";*/
+		/*String _OStr = ";*/
 		/*Iterator it = _OStr.
 		while(it.hasNext()) {
 			System.out.println(it.next());

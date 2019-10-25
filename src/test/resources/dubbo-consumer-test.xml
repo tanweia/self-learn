@@ -20,8 +20,8 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-    <dubbo:consumer check="false" version="serius_tw"/>
-    <dubbo:application name="self-learn-consumer-test" owner="serius_tw" organization="serius_tw"/>
+    <dubbo:consumer check="false" version=""/>
+    <dubbo:application name="self-learn-consumer-test" owner="" organization=""/>
     <dubbo:registry protocol="zookeeper" address="zookeeper://127.0.0.1:2181" timeout="20000"/>
     <dubbo:reference id="demoService" interface="com.serius.learn.api.DemoService" timeout="300000"/>
 </beans>

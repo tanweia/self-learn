@@ -17,12 +17,12 @@
 
 	<name>com.serius:self-learn</name>
 	<description>self learn</description>
-	<url>https://github.com/tanweia/self-learn</url>
+	<url>https://github.com/serius/self-learn</url>
 	
 	<developers>
 		<developer>
-			<name>serius_tw</name>
-			<email>serius_tw@163.com</email>
+			<name>serius</name>
+			<email>serius@163.com</email>
 		</developer>
 	</developers>
 	<licenses>
@@ -33,9 +33,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:https://github.com/tanweia/self-learn.git</connection>
-		<developerConnection>scm:https://github.com/tanweia/self-learn.git</developerConnection>
-		<url>git:https://github.com/tanweia/self-learn.git</url>
+		<connection>scm:https://github.com/serius/self-learn.git</connection>
+		<developerConnection>scm:https://github.com/serius/self-learn.git</developerConnection>
+		<url>git:https://github.com/serius/self-learn.git</url>
 	</scm>
 
 	<!-- <repositories>
